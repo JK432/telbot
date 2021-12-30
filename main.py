@@ -35,8 +35,8 @@ bot = telebot.TeleBot(API_KEY)
 
 @bot.message_handler(commands=['start'])
 def greet(message):
-  bot.reply_to(message,"type \"anthasman<space>c/p<space>repilname\" "   )
-  bot.send_message(message.chat.id,"Example:sandy p practise-2")
+  bot.reply_to(message,"type \"buck<space>c/p<space>repilname\" "   )
+  bot.send_message(message.chat.id,"Example:buck p practise-2")
   bot.send_message(message.chat.id,"Copying is an ART so do it often")
   bot.send_animation(chat_id = message.chat.id,animation = "https://tenor.com/2lsS.gif")
   bot.send_message(message.chat.id,"പിന്നെ \" വിളച്ചിൽ എടുക്കരുത് കേട്ടോ\" എന്ന് സന്ദീപ് പറയാൻ പറഞ്ഞു  ")
@@ -47,7 +47,7 @@ def stock_request(message):
   
   request = message.text.split()
   # print(request)
-  if len(request) < 3 or request[0].lower() not in "sandy":
+  if len(request) < 3 or request[0].lower() not in "buck":
 
     return False
   else:
