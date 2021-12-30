@@ -3,10 +3,10 @@ import telebot
 import random
 import requests
 from github import Github
-from prettytable import PrettyTable
 
-table = PrettyTable()
-table.field_names = ["Repository Name", "Private", "Public","Created Date","Language"]
+
+
+
 
 #github generated access token
 access_token ="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"
@@ -125,7 +125,6 @@ def send_price(message):
 
   
 bot.polling()
-
 
 
 
