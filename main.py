@@ -38,7 +38,7 @@ bot = telebot.TeleBot(API_KEY)
 
 @bot.message_handler(commands=['start'])
 def greet(message):
-  bot.send_photo(message.chat.id,"https://ibb.co/ftvdnx9",caption="\n Hai👋 \n\nI can help you with your lab questions😇 \"You can just copy my code\".\n\n\n📙For geting C lab codes just type\n\nbuck<space>c<space>repilName\nExample:buck c multiplication-table\n\n\n📙For geting Python lab codes just type\n\nbuck<space>p<space>repilName\nExample:buck p practise-2\n\n\n\n☠️☠️Remember while typeing repilname replace whitespace by \"-\" symbol☠️☠️")
+  bot.send_photo(message.chat.id,"https://ibb.co/ftvdnx9",caption="\n Hai👋 \n\nI can help you with your lab questions😇 \"You can just copy my code\".\n\n\n📙For geting C lab codes just type\n\nbuck<space>c<space>repilName\nExample:buck c multiplication-table\n\n\n📙For geting Python lab codes just type\n\nbuck<space>p<space>repilName\nExample:buck p practise-2\n\n\n\n☠️☠️Remember while typing repilname replace whitespace by \"-\" symbol☠️☠️")
   
   bot.send_animation(chat_id = message.chat.id,animation = "https://tenor.com/2lsS.gif",caption="അപ്പൊ എങ്ങന! തുടങ്ങാല്ല\n\nHappy Codeing ❤️")
 
