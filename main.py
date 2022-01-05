@@ -20,9 +20,9 @@ user  = login.get_user()
 #get all repositories
 my_repos = user.get_repos()
 list1 = [1, 2, 3, 4, 5, 6]
-giflist = ["https://tenor.com/bgzfD.gif", "https://tenor.com/bDrSi.gif", "https://tenor.com/SeP8.gif", "https://tenor.com/bDm4C.gif", "https://tenor.com/bk6hj.gif", "https://tenor.com/bfic7.gif","https://tenor.com/mZ5ao6ynn78.gif","https://tenor.com/brcxd.gif",
+giflist = ["https://tenor.com/bgzfD.gif", "https://tenor.com/bDrSi.gif", "https://tenor.com/SeP8.gif", "https://tenor.com/lnHKiYWYHmJ.gif", "https://tenor.com/5ThD.gif", "https://tenor.com/bfic7.gif","https://tenor.com/biuD1.gif","https://tenor.com/brcxd.gif",
 "https://tenor.com/cfB22fCDQYh.gif"]
-giflstsad=["https://tenor.com/bJop4.gif","https://tenor.com/pH3B5ifYqn.gif","https://tenor.com/hmoStO0Chvw.gif","https://tenor.com/jsZFqz0UyvM.gif","https://tenor.com/bDiJv.gif","https://tenor.com/bGZwS.gif"]
+giflstsad=["https://tenor.com/btEYG.gif","https://tenor.com/pH3B5ifYqn.gif","https://tenor.com/hmoStO0Chvw.gif","https://tenor.com/jsZFqz0UyvM.gif","https://tenor.com/bDiJv.gif","https://tenor.com/bGZwS.gif"]
 fount =0
 
     
@@ -38,7 +38,7 @@ bot = telebot.TeleBot(API_KEY)
 
 @bot.message_handler(commands=['start'])
 def greet(message):
-  bot.send_photo(message.chat.id,"https://ibb.co/ftvdnx9",caption="\n Hai👋 \n\nI can help you with your lab questions😇 \"You can just copy my code\".\n\n\n📙For geting C lab codes just type\n\nbuck<space>c<space>repilName\nExample:buck c multiplication-table\n\n\n📙For geting Python lab codes just type\n\nbuck<space>p<space>repilName\nExample:buck p practise-2\n\n\n\n☠️☠️Remember while typing repilname replace whitespace by \"-\" symbol☠️☠️")
+  bot.send_photo(message.chat.id,"https://ibb.co/ftvdnx9",caption="\n Hai👋 \n\nI can help you with your lab questions😇 \"You can just copy my code\".\n\n\n📙For geting C lab codes just type\n\nbuck<space>c<space>repilName\nExample:buck c multiplication-table\n\n\n📙For geting Python lab codes just type\n\nbuck<space>p<space>repilName\nExample:buck p practise-2\n\n\n\n☠️☠️Remember while typeing repilname replace whitespace by \"-\" symbol☠️☠️\n\n🥳 Its version -v20.00.01 check WHATSNEW \n\n✅ provide full code for all files\n✅ Updated Gif")
   
   bot.send_animation(chat_id = message.chat.id,animation = "https://tenor.com/2lsS.gif",caption="അപ്പൊ എങ്ങന! തുടങ്ങാല്ല\n\nHappy Codeing ❤️")
 
@@ -80,11 +80,14 @@ def send_price(message):
       
       
       if(r.name.lower()== rname.lower() and r.language=="Python"):
-          
-          url = r.get_contents("main.py").download_url
-          m = requests.get(url) 
-          bot.reply_to(message,r.name+" code bellow 👇")
-          bot.send_message(message.chat.id,m.content)
+          filelist={}
+          filelist=r.get_contents("")
+          for t in filelist:
+            if (t.path!="__pycache__"):
+              url = t.download_url
+              m = requests.get(url) 
+              bot.reply_to(message,t.path+" from "+r.name+" code bellow 👇")
+              bot.send_message(message.chat.id,m.content)
           
           if(ran==3):
             
@@ -134,6 +137,11 @@ def send_price(message):
 
   
 bot.polling()
+
+
+
+
+
 
 
 
