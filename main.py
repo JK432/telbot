@@ -5,7 +5,7 @@ import requests
 from github import Github
 
 # github generated access token
-access_token = "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"
+access_token = "Acess token here"
 
 # login with access token
 login = Github(access_token)
@@ -24,7 +24,7 @@ giflstsad = ["https://tenor.com/btEYG.gif", "https://tenor.com/pH3B5ifYqn.gif", 
              "https://tenor.com/jsZFqz0UyvM.gif", "https://tenor.com/bDiJv.gif", "https://tenor.com/bGZwS.gif"]
 fount = 0
 
-API_KEY = "5099142440:AAGEVP7sxDYUGBZF7Pzq7tQ0KQJarIbClAE"
+API_KEY = "botapikeyhere"
 bot = telebot.TeleBot(API_KEY)
 
 
